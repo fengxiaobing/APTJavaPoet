@@ -1,0 +1,3 @@
+com.example.compiler.ARouterProcessor
+com.example.compiler.BindViewProcessor
+com.example.compiler.HelloWorldProcessor

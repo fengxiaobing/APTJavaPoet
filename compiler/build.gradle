@@ -1,0 +1,21 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly 'com.google.auto.service:auto-service:1.0-rc4' //引入auto-service实现注解自动注册
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc4' //引入auto-service实现注解自动注册
+
+    //引入javapoet注解项目，处理注解
+    implementation "com.squareup:javapoet:1.9.0"
+
+    //引入annotation注解项目，处理注解
+    implementation project(':annotation')
+
+}
+//java控制台输出中文乱码
+tasks.withType(JavaCompile){
+    options.encoding = "UTF-8"
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
